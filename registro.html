@@ -125,7 +125,7 @@
                         <button class="w-100 btn btn-primary btn-lg" type="submit">Registrarse</button>
                       </div>
                       <div class="col-12 mt-2">
-                        <button class="w-100 btn btn-secondary btn-lg" type="button" onclick="limpiarFormulario()">Limpiar</button>
+                        <button id="resetButton" class="w-100 btn btn-secondary btn-lg" type="button" onclick="limpiarFormulario()">Limpiar</button>
                       </div>
                     </div>
                   </form>
@@ -155,68 +155,6 @@
               </div>
             </footer>
           </div>
-
-          <script>
-            document.getElementById('registroForm').addEventListener('submit', function(event) {
-              var form = this;
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-              
-              // Validaciones adicionales
-              var password = document.getElementById('password').value;
-              var password2 = document.getElementById('password2').value;
-              var correo = document.getElementById('correo').value;
-              var fechaNac = new Date(document.getElementById('fecha_nac').value);
-              var hoy = new Date();
-              var edad = hoy.getFullYear() - fechaNac.getFullYear();
-              var emailValido = /\S+@\S+\.\S+/;
-              var passwordValido = /^(?=.*\d)(?=.*[A-Z]).{6,18}$/;
-              
-              if (!emailValido.test(correo)) {
-                document.getElementById('correo').classList.add('is-invalid');
-                document.getElementById('correo').classList.remove('is-valid');
-              } else {
-                document.getElementById('correo').classList.remove('is-invalid');
-                document.getElementById('correo').classList.add('is-valid');
-              }
-              
-              if (password !== password2) {
-                document.getElementById('password2').classList.add('is-invalid');
-                document.getElementById('password2').classList.remove('is-valid');
-              } else {
-                document.getElementById('password2').classList.remove('is-invalid');
-                document.getElementById('password2').classList.add('is-valid');
-              }
-              
-              if (!passwordValido.test(password)) {
-                document.getElementById('password').classList.add('is-invalid');
-                document.getElementById('password').classList.remove('is-valid');
-              } else {
-                document.getElementById('password').classList.remove('is-invalid');
-                document.getElementById('password').classList.add('is-valid');
-              }
-              
-              if (edad < 13) {
-                document.getElementById('fecha_nac').classList.add('is-invalid');
-                document.getElementById('fecha_nac').classList.remove('is-valid');
-              } else {
-                document.getElementById('fecha_nac').classList.remove('is-invalid');
-                document.getElementById('fecha_nac').classList.add('is-valid');
-              }
-            }, false);
-            
-            function limpiarFormulario() {
-              document.getElementById('registroForm').reset();
-              var inputs = document.getElementById('registroForm').querySelectorAll('.form-control');
-              inputs.forEach(input => {
-                input.classList.remove('is-valid');
-                input.classList.remove('is-invalid');
-              });
-            }
-            </script>
 
     </body>    
 </html>

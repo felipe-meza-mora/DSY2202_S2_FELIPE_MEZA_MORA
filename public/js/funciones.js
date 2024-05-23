@@ -1,70 +1,90 @@
-document.getElementById('registroForm').addEventListener('submit', function(event) {
-    var form = this;
-    if (!form.checkValidity()) {
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('registroForm');
+
+  form.addEventListener('submit', function(event) {
       event.preventDefault();
       event.stopPropagation();
-    }
-    form.classList.add('was-validated');
-    
-    // Validaciones adicionales
-    var password = document.getElementById('password').value;
-    var password2 = document.getElementById('password2').value;
-    var correo = document.getElementById('correo').value;
-    var fechaNacInput = document.getElementById('fecha_nac').value;
-    var fechaNac = new Date(fechaNacInput);
-    var hoy = new Date();
-    var edad = hoy.getFullYear() - fechaNac.getFullYear();
-    var mes = hoy.getMonth() - fechaNac.getMonth();
-    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
-      edad--;
-    }
-    var emailValido = /\S+@\S+\.\S+/;
-    var passwordValido = /^(?=.*\d)(?=.*[A-Z]).{6,18}$/;
-  
-    // Validar correo
-    if (!emailValido.test(correo)) {
-      document.getElementById('correo').classList.add('is-invalid');
-      document.getElementById('correo').classList.remove('is-valid');
-    } else {
-      document.getElementById('correo').classList.remove('is-invalid');
-      document.getElementById('correo').classList.add('is-valid');
-    }
-  
-    // Validar contraseñas
-    if (password !== password2) {
-      document.getElementById('password2').classList.add('is-invalid');
-      document.getElementById('password2').classList.remove('is-valid');
-    } else {
-      document.getElementById('password2').classList.remove('is-invalid');
-      document.getElementById('password2').classList.add('is-valid');
-    }
-  
-    if (!passwordValido.test(password)) {
-      document.getElementById('password').classList.add('is-invalid');
-      document.getElementById('password').classList.remove('is-valid');
-      document.getElementById('password').nextElementSibling.textContent = "La contraseña debe tener al menos un número, una letra en mayúscula y estar entre 6 y 18 caracteres.";
-    } else {
-      document.getElementById('password').classList.remove('is-invalid');
-      document.getElementById('password').classList.add('is-valid');
-    }
-  
-    // Validar edad
-    if (fechaNacInput === "" || edad < 13) {
-      document.getElementById('fecha_nac').classList.add('is-invalid');
-      document.getElementById('fecha_nac').classList.remove('is-valid');
-      document.getElementById('fecha_nac').nextElementSibling.textContent = fechaNacInput === "" ? "La fecha de nacimiento es requerida." : "Debe ser mayor a 13 años.";
-    } else {
-      document.getElementById('fecha_nac').classList.remove('is-invalid');
-      document.getElementById('fecha_nac').classList.add('is-valid');
-    }
+      
+      var nombre = document.getElementById('name');
+      var usuario = document.getElementById('usuario');
+      var correo = document.getElementById('correo');
+      var password = document.getElementById('password');
+      var password2 = document.getElementById('password2');
+      var fechaNac = document.getElementById('fecha_nac');
+      
+      var emailValido = /\S+@\S+\.\S+/;
+      var passwordValido = /^(?=.*\d)(?=.*[A-Z]).{6,18}$/;
+      
+      var hoy = new Date();
+      var fechaNacimiento = new Date(fechaNac.value);
+      var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+      var mes = hoy.getMonth() - fechaNacimiento.getMonth();
+      if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+          edad--;
+      }
+      
+      if (!nombre.value) {
+          nombre.classList.add('is-invalid');
+      } else {
+          nombre.classList.remove('is-invalid');
+          nombre.classList.add('is-valid');
+      }
+
+      if (!usuario.value) {
+          usuario.classList.add('is-invalid');
+      } else {
+          usuario.classList.remove('is-invalid');
+          usuario.classList.add('is-valid');
+      }
+
+      if (!correo.value || !emailValido.test(correo.value)) {
+          correo.classList.add('is-invalid');
+      } else {
+          correo.classList.remove('is-invalid');
+          correo.classList.add('is-valid');
+      }
+
+      if (!password.value || !passwordValido.test(password.value)) {
+          password.classList.add('is-invalid');
+          password.nextElementSibling.textContent = "La contraseña debe tener al menos un número, una letra en mayúscula y estar entre 6 y 18 caracteres.";
+      } else {
+          password.classList.remove('is-invalid');
+          password.classList.add('is-valid');
+      }
+
+      if (!password2.value) {
+          password2.classList.add('is-invalid');
+          password2.nextElementSibling.textContent = "Repetir la contraseña es requerido.";
+      } else if (password.value !== password2.value) {
+          password2.classList.add('is-invalid');
+          password2.nextElementSibling.textContent = "Las contraseñas deben ser iguales.";
+      } else {
+          password2.classList.remove('is-invalid');
+          password2.classList.add('is-valid');
+      }
+
+      if (!fechaNac.value || edad < 13) {
+          fechaNac.classList.add('is-invalid');
+          fechaNac.nextElementSibling.textContent = fechaNac.value === "" ? "La fecha de nacimiento es requerida." : "Debe ser mayor o igual a 13 años.";
+      } else {
+          fechaNac.classList.remove('is-invalid');
+          fechaNac.classList.add('is-valid');
+      }
+
+      if (document.querySelectorAll('.is-invalid').length === 0) {
+          form.submit();
+      }
   });
-  
+
+  document.getElementById('resetButton').addEventListener('click', function() {
+      limpiarFormulario();
+  });
+
   function limpiarFormulario() {
-    document.getElementById('registroForm').reset();
-    var elementos = document.querySelectorAll('.is-valid, .is-invalid');
-    elementos.forEach(function(elemento) {
-      elemento.classList.remove('is-valid');
-      elemento.classList.remove('is-invalid');
-    });
-    document.getElementById('registroForm').classList.remove('was-validated');
+      form.reset();
+      var elementos = document.querySelectorAll('.is-invalid, .is-valid');
+      elementos.forEach(function(elemento) {
+          elemento.classList.remove('is-invalid', 'is-valid');
+      });
   }
+});
