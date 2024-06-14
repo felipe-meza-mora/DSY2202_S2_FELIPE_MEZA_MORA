@@ -113,7 +113,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/hero.jpeg");
+    ),url("../img/hero.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -178,7 +178,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/ludo.jpg");
+    ),url("../img/ludo.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -193,7 +193,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/backgammon.jpg");
+    ),url("../img/backgammon.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -207,7 +207,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/monopoly.png");
+    ),url("../img/monopoly.png");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -239,7 +239,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/domino.jpg");
+    ),url("../img/domino.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -254,7 +254,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/ajedrez.jpg");
+    ),url("../img/ajedrez.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -268,7 +268,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/damas.jpg");
+    ),url("../img/damas.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -303,7 +303,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/francesa.jpg");
+    ),url("../img/francesa.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -318,7 +318,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/espanola.jpg");
+    ),url("../img/espanola.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -332,7 +332,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/magic.jpeg");
+    ),url("../img/magic.jpeg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -369,7 +369,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/100.jpg");
+    ),url("../img/100.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -384,7 +384,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/500.jpg");
+    ),url("../img/500.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -398,7 +398,7 @@ header a:hover{
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-    ),url("../../public/img/1000.jpg");
+    ),url("../img/1000.jpg");
     background-position: center;
     background-size:cover;
     padding: 50px;
@@ -467,7 +467,7 @@ footer .container{
             0deg,
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
-        ),url("../../public/img/equipo.png");
+        ),url("../img/equipo.png");
         background-size: cover;
         background-position: center;
         height: 500px;
@@ -504,7 +504,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/ludo.jpg");
+        ,url("../img/ludo.jpg");
 
     }
 
@@ -514,7 +514,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/backgammon.jpg");
+        ,url("../img/backgammon.jpg");
     }
 
     .carta3:nth-child(3){
@@ -523,7 +523,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/monopoly.png");
+        ,url("../img/monopoly.png");
 
     }
 
@@ -553,7 +553,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/domino.jpg");
+        ,url("../img/domino.jpg");
 
     }
 
@@ -563,7 +563,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/ajedrez.jpg");
+        ,url("../img/ajedrez.jpg");
     }
 
     .carta6:nth-child(3){
@@ -572,7 +572,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/damas.jpg");
+        ,url("../img/damas.jpg");
 
     }
 
@@ -601,7 +601,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/francesa.jpg");
+        ,url("../img/francesa.jpg");
 
     }
 
@@ -611,7 +611,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/espanola.jpg");
+        ,url("../img/espanola.jpg");
     }
 
     .carta9:nth-child(3){
@@ -620,7 +620,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/magic.jpeg");
+        ,url("../img/magic.jpeg");
 
     }
 
@@ -654,7 +654,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/100.jpg");
+        ,url("../img/100.jpg");
 
     }
 
@@ -664,7 +664,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/500.jpg");
+        ,url("../img/500.jpg");
     }
 
     .carta12:nth-child(3){
@@ -673,7 +673,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../../public/img/1000.jpg");
+        ,url("../img/1000.jpg");
 
     }
 
